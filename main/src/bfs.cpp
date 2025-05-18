@@ -18,6 +18,7 @@ void BFS::bfs(Board initialState) {
 
         if(currentState.matchGoal()) {
             cout << "bfs solution found!!!!!" << endl;
+            cout << "movimentos: " << visitedStates.size() << endl;
             return;
         }
 

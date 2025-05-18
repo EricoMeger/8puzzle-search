@@ -18,6 +18,7 @@ void DFS::dfs(Board initialState) {
 
         if(currentState.matchGoal()) {
             cout << "dfs solution found!!" << endl;
+            cout << "movimentos: " << visitedStates.size() << endl;
             return;
         } 
 
