@@ -9,6 +9,7 @@ https://www.digitalocean.com/community/tutorials/foreach-loop-c-plus-plus
 https://cplusplus.com/reference/stack/stack/
 https://cplusplus.com/forum/beginner/236407/ #set operator< overload
 https://stackoverflow.com/questions/1653958 why-are-ifndef-and-define-used-in-c-header-files
+https://en.cppreference.com/w/cpp/language/operators#Relational_operators
 
 https://math.stackexchange.com/questions/293527/how-to-check-if-a-8-puzzle-is-solvable
 https://www.geeksforgeeks.org/check-instance-8-puzzle-solvable/
