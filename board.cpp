@@ -19,10 +19,36 @@ Board::Board(vector<vector<int>> board) {
 
 Board::~Board(){}
 
+//Para checar se um tabuleiro tem solução, é preciso checar se o ńumero de inversões é par
+//Uma inversão ocorre quando, na sequência de números do tabuleiro, um número maior aparece antes de um número menro.
+bool Board::isSolvable(const vector<vector<int>>& tabuleiro) {
+  vector<int> lista;
+  int totalInversions = 0;
+
+  for(auto row : board) {
+    for (int num : row) {
+      if(num != 0){
+        lista.push_back(num);
+      }
+    }
+  }
+
+  for(int i = 0; i < lista.size(); i++){
+    //começa em j+1 para nao repetir elementos / comparar ja comparados
+    for(int j = i+1; j < lista.size(); j++){
+      if(lista[i] > lista[j]) {
+        totalInversions++;
+      }
+    }
+  }
+
+  return totalInversions % 2 == 0;
+}
+
 // Overload do operador < é necessário para que objetos Board possam ser armazenados no set,
 // o set precisa saber comparar e ordenar seus elementos internamente, então temos que "dizer" para ele como fazer isso com elementos da classe Board.
-bool Board::operator<(const Board& other) const { //Não modifica o objeto atual (const { return... }) e nem o objeto recebido (const Board& ..)
-  return board < other.board;
+bool Board::operator<(const Board& board) const { //Não modifica o objeto atual (const { return... }) e nem o objeto recebido (const Board& ..)
+  return this->board < board.board;
 }
 
 void Board::printBoard() {

@@ -7,3 +7,6 @@ https://cplusplus.com/reference/set/set/
 https://cplusplus.com/reference/queue/queue/
 https://www.digitalocean.com/community/tutorials/foreach-loop-c-plus-plus
 https://cplusplus.com/forum/beginner/236407/ #set operator< overload
+
+https://math.stackexchange.com/questions/293527/how-to-check-if-a-8-puzzle-is-solvable
+https://www.geeksforgeeks.org/check-instance-8-puzzle-solvable/

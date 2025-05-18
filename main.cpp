@@ -6,7 +6,7 @@
 using std::vector, std::cout, std::endl;
 
 int main() {
-    vector<vector<int>> board = {{4, 1, 2}, {3, 0, 5}, {6, 7, 8}};
+    vector<vector<int>> board = {{3, 1, 2}, {0, 4, 5}, {6, 7, 8}};
     Board b(board);
     // b.printBoard();
     // // cout << b.matchGoal();
