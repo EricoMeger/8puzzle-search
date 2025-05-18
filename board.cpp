@@ -10,14 +10,20 @@ Board::Board(vector<vector<int>> board) {
   for(int i = 0; i < 3; i++) {
     for(int j = 0; j < 3; j++) {
       if(board[i][j] == 0){
-        blank_pos[0] = i;
-        blank_pos[1] = j;
+        blankPos[0] = i;
+        blankPos[1] = j;
       }
     }
   }
 }
 
 Board::~Board(){}
+
+// Overload do operador < é necessário para que objetos Board possam ser armazenados no set,
+// o set precisa saber comparar e ordenar seus elementos internamente, então temos que "dizer" para ele como fazer isso com elementos da classe Board.
+bool Board::operator<(const Board& other) const { //Não modifica o objeto atual (const { return... }) e nem o objeto recebido (const Board& ..)
+  return board < other.board;
+}
 
 void Board::printBoard() {
   for (auto row : board) {
@@ -35,9 +41,9 @@ bool Board::matchGoal() {
 }
 
 void Board::swapWithBlank(vector<vector<int>>& matrix, int new_posX, int new_posY) {
-      int old_value = matrix[new_posX][new_posY];
+      int oldValue = matrix[new_posX][new_posY];
       matrix[new_posX][new_posY] = 0;
-      matrix[blank_pos[0]][blank_pos[1]] = old_value;
+      matrix[blankPos[0]][blankPos[1]] = oldValue;
 }
 
 vector<Board> Board::getPossibleStates() {
@@ -47,13 +53,13 @@ vector<Board> Board::getPossibleStates() {
   int new_posX, new_posY;
 
   for(int i = 0; i < 4; i++){
-    new_posX = blank_pos[0];
-    new_posY = blank_pos[1];
+    new_posX = blankPos[0];
+    new_posY = blankPos[1];
 
     if(i < 2) {
-      new_posX = blank_pos[0] + transicoes[i];
+      new_posX = blankPos[0] + transicoes[i];
     } else {
-      new_posY = blank_pos[1] + transicoes[i];
+      new_posY = blankPos[1] + transicoes[i];
     }
 
     if(new_posX >= 0 && new_posX < 3 && new_posY >= 0 && new_posY < 3) {
