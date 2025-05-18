@@ -4,8 +4,13 @@
 
 using std::vector, std::cout, std::endl;
 
+BFS::BFS(){}
+
+BFS::~BFS(){}
+
 void BFS::search(Board initialState) {
     statesQueue.push(initialState);
+    visitedStates.insert(initialState);
 
     while (!statesQueue.empty()) {
         Board currentState = statesQueue.front();

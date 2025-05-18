@@ -7,7 +7,7 @@ using std::vector, std::cout, std::endl;
 
 int main() {
     BFS bfs;
-    vector<vector<int>> board = {{4, 1, 2}, {3, 0, 5}, {6, 7, 8}};
+    vector<vector<int>> board = {{2, 1, 5}, {3, 4, 0}, {7, 6, 8}};
     Board initialState(board);
     
     if(!initialState.isSolvable()) {

@@ -12,6 +12,8 @@ class BFS {
         queue<Board> statesQueue;
         set<Board> visitedStates;
     public:
+        BFS();
+        ~BFS();
         void search(Board initialState);
 };
 
