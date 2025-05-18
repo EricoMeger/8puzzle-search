@@ -14,7 +14,7 @@ class BFS {
     public:
         BFS();
         ~BFS();
-        void search(Board initialState);
+        void bfs(Board initialState);
 };
 
 #endif

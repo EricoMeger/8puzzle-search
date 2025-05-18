@@ -8,7 +8,7 @@ BFS::BFS(){}
 
 BFS::~BFS(){}
 
-void BFS::search(Board initialState) {
+void BFS::bfs(Board initialState) {
     statesQueue.push(initialState);
     visitedStates.insert(initialState);
 
@@ -17,7 +17,7 @@ void BFS::search(Board initialState) {
         statesQueue.pop(); //Pega o primeiro elemento e tira ele da fila
 
         if(currentState.matchGoal()) {
-            cout << "solution found!!!!!" << endl;
+            cout << "bfs solution found!!!!!" << endl;
             return;
         }
 
