@@ -12,3 +12,4 @@ https://stackoverflow.com/questions/1653958 why-are-ifndef-and-define-used-in-c-
 
 https://math.stackexchange.com/questions/293527/how-to-check-if-a-8-puzzle-is-solvable
 https://www.geeksforgeeks.org/check-instance-8-puzzle-solvable/
+https://stackoverflow.com/questions/12864004/tracing-and-returning-a-path-in-depth-first-search

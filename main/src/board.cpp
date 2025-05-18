@@ -4,6 +4,13 @@
 
 using std::vector, std::cout, std::endl;
 
+//Construtor "pelado" pra conseguir usar o map
+Board::Board() {
+  board = {{0, 1, 2}, {3, 4, 5}, {6, 7, 8}};
+  blankPos[0] = 0;
+  blankPos[1] = 0;
+}
+
 Board::Board(vector<vector<int>> board) {
   this->board = board;
 
@@ -50,6 +57,11 @@ bool Board::isSolvable() {
 // o set precisa saber comparar e ordenar seus elementos internamente, então temos que "dizer" para ele como fazer isso com elementos da classe Board.
 bool Board::operator<(const Board& board) const { //Não modifica o objeto atual (const { return... }) e nem o objeto recebido (const Board& ..)
   return this->board < board.board;
+}
+
+//No mesmo sentido do overload do <, preciso mostrar pro C++ como ele compara dois Boards usando !=
+bool Board::operator!=(const Board& board) const {
+  return this->board != board.board;
 }
 
 void Board::printBoard() {
