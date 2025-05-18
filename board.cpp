@@ -21,10 +21,11 @@ Board::~Board(){}
 
 //Para checar se um tabuleiro tem solução, é preciso checar se o ńumero de inversões é par
 //Uma inversão ocorre quando, na sequência de números do tabuleiro, um número maior aparece antes de um número menro.
-bool Board::isSolvable(const vector<vector<int>>& tabuleiro) {
+bool Board::isSolvable() {
   vector<int> lista;
   int totalInversions = 0;
 
+  // joga cada fileira da matriz pra uma lista, mais facil de validar as inversões
   for(auto row : board) {
     for (int num : row) {
       if(num != 0){

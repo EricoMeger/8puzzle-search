@@ -6,17 +6,15 @@
 using std::vector, std::cout, std::endl;
 
 int main() {
-    vector<vector<int>> board = {{3, 1, 2}, {0, 4, 5}, {6, 7, 8}};
-    Board b(board);
-    // b.printBoard();
-    // // cout << b.matchGoal();
-
-    // auto possibilities = b.getPossibleStates();
-    // for(int i = 0; i < 4; i++){
-    //     cout << "---------" << endl;
-    //     possibilities[i].printBoard();
-    // }
     BFS bfs;
-    bfs.search(board);
+    vector<vector<int>> board = {{4, 1, 2}, {3, 0, 5}, {6, 7, 8}};
+    Board initialState(board);
+    
+    if(!initialState.isSolvable()) {
+        cout << "The initial state is NOT solvable!" << endl;
+        return 0;
+    }
+
+    bfs.search(initialState);
 
 }

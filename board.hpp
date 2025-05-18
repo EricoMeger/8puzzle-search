@@ -12,7 +12,7 @@ class Board {
     public:
         Board(vector<vector<int>> board);
         ~Board();
-        bool isSolvable(const vector<vector<int>>& board);
+        bool isSolvable();
         bool operator<(const Board& other) const;
         void printBoard();
         bool matchGoal();
